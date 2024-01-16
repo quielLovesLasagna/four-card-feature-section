@@ -27,8 +27,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: []()
-- Live Site URL: []()
+- Solution URL: [https://github.com/quielLovesLasagna/four-card-feature-section](https://github.com/quielLovesLasagna/four-card-feature-section)
+- Live Site URL: [https://quiel-four-card-feature-section.netlify.app/](https://quiel-four-card-feature-section.netlify.app/)
 
 ## My process
 
