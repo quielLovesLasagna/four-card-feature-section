@@ -1,0 +1,120 @@
+@use "./abstracts" as abs;
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: abs.$ff-poppins;
+	font-size: abs.toRem(15px);
+}
+
+img,
+svg {
+	max-width: 100%;
+	display: block;
+}
+
+.text {
+	text-align: center;
+	max-width: abs.toRem(550px);
+	margin: abs.toRem(40px) auto;
+	padding-inline: abs.toRem(20px);
+
+	&__heading {
+		color: abs.$cl-very-dark-blue;
+		font-weight: abs.$fw-medium;
+		margin-bottom: abs.toRem(20px);
+
+		@media only screen and (max-width: 43.75em) {
+			font-size: abs.toRem(26px);
+		}
+
+		span {
+			font-weight: abs.$fw-xxtiny;
+			display: block;
+		}
+	}
+
+	&__paragraph {
+		color: abs.$cl-grayish-blue;
+	}
+}
+
+.card {
+	margin: abs.toRem(60px) 12%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-template-areas:
+		"start middle1 end"
+		"start middle2 end";
+	gap: abs.toRem(30px);
+
+	@media only screen and (max-width: 76.5625em) {
+		grid-template-areas: none;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media only screen and (max-width: 43.75em) {
+		grid-template-columns: 1fr;
+	}
+
+	&__item {
+		box-shadow: 0 1rem 2rem rgba(abs.$cl-black, 0.1);
+		padding: abs.toRem(30px);
+		border-radius: abs.toRem(5px);
+		border-top: 5px solid;
+	}
+
+	&__heading {
+		font-size: abs.toRem(20px);
+		color: abs.$cl-very-dark-blue;
+		margin-bottom: abs.toRem(10px);
+	}
+
+	&__text {
+		color: abs.$cl-grayish-blue;
+		margin-bottom: abs.toRem(40px);
+	}
+
+	&__image {
+		margin-left: auto;
+	}
+
+	.card-1 {
+		grid-area: start;
+		align-self: center;
+		border-color: abs.$cl-cyan;
+	}
+
+	.card-2 {
+		grid-area: middle1;
+		border-color: abs.$cl-red;
+	}
+
+	.card-3 {
+		grid-area: middle2;
+		border-color: abs.$cl-orange;
+	}
+
+	.card-4 {
+		grid-area: end;
+		align-self: center;
+		border-color: abs.$cl-blue;
+	}
+
+	& .card-1,
+	& .card-2,
+	& .card-3,
+	& .card-4 {
+		@media only screen and (max-width: 76.5625em) {
+			grid-area: initial;
+			align-self: initial;
+		}
+	}
+}
